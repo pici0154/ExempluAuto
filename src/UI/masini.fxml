@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.cell.TextFieldTableCell?>
+
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="UI.Controller"
+            prefHeight="400.0" prefWidth="600.0">
+
+<HBox>
+    <VBox>
+        <Label text="Masini Diesel:"/>
+        <TableView fx:id="tableViewDiesel" editable="true">
+            <columns>
+                <TableColumn fx:id="tableColumnModel" text="model">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="model" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnPret" text="pret" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="pret" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnConsum" text="consum">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="consum" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+    </VBox>
+
+    <VBox>
+        <Label text="Masini Electrica:"/>
+        <TableView fx:id="tableViewElectrica" editable="true">
+            <columns>
+                <TableColumn fx:id="tableColumnModelE" text="model">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="model" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnPretE" text="pret" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="pret" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnAutonomieE" text="autonomie">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="autonomie" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+
+    </VBox>
+
+<HBox>
+    <VBox>
+    <Button text="Add masina" fx:id="btnMasinaAdd" onAction="#btnMasinaAddClick" />
+    <Button text="Delete diesel" fx:id="btnDieselDelete" onAction="#btnDieselDeleteClick" />
+    <Button text="Delete electrica" fx:id="btnElectricaDelete" onAction="#btnElectricaDeleteClick" />
+        <HBox>
+            <TextField  fx:id="txtGetByPrice" text="Price"/>
+            <Button text ="GetByPrice" fx:id="btnGetByPrice" onAction="#btnGetByPriceClick"/>
+        </HBox>
+    </VBox>
+</HBox>
+</HBox>
+
+
+
+</AnchorPane>
